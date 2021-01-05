@@ -12,7 +12,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(glsl|txt|obj|ply)$/i,
+        test: /\.(glsl|txt|obj|ply|stl|fbx|3ds|x3d)$/i,
         use: 'raw-loader',
       },{
         test: /\.(png|jpg|gif)$/i,

@@ -1,6 +1,8 @@
 import Utils from './utils.js'
 import ModelImporter from './importer.js'
 import ModelImporterPLY from './ply_importer.js'
+import ModelImporterSTL from './stl_importer.js'
+import ModelImporterFBX from './fbx_importer.js'
 import Camera from './camera.js'
 import black_white_png from './model/black_white_fill.png'
 import cheese_png from './model/cheese.png' 
@@ -17,6 +19,8 @@ var vertex_position_Loc, texture_coordinates_Loc
 var myCamera
 var myImporter
 var myImporterPLY
+var myImporterSTL
+var myImporterFBX
 
 var pMat, mvMat, mMat, vMat
 var pMatLoc, mvMatLoc
@@ -30,17 +34,21 @@ function setupVertices() {
   // myImporter = new ModelImporter()
   // myImporter.parseOBJ()
 
-  myImporterPLY = new ModelImporterPLY();
+  //myImporterPLY = new ModelImporterPLY();
+  myImporterSTL = new ModelImporterSTL();
+  myImporterFBX = new ModelImporterFBX();
   // myImporterPLY.parsePLY()
 
 
   VBO_vertex_position = gl.createBuffer()
   gl.bindBuffer(gl.ARRAY_BUFFER, VBO_vertex_position)
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(myImporterPLY.triangleVerts), gl.STATIC_DRAW)
+  //gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(myImporterPLY.triangleVerts), gl.STATIC_DRAW)
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(myImporterSTL.triangleVerts), gl.STATIC_DRAW)
 
   VBO_texture_coordinates = gl.createBuffer()
   gl.bindBuffer(gl.ARRAY_BUFFER, VBO_texture_coordinates)
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(myImporterPLY.textureCoords), gl.STATIC_DRAW)
+  //gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(myImporterPLY.textureCoords), gl.STATIC_DRAW)
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(myImporterSTL.textureCoords), gl.STATIC_DRAW)
 
 }
 
@@ -114,7 +122,8 @@ function display(currentTime) {
   gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, cheese_image)
   gl.generateMipmap(gl.TEXTURE_2D)
 
-  gl.drawArrays(gl.TRIANGLES, 0, myImporterPLY.getNumVertices())
+  //gl.drawArrays(gl.TRIANGLES, 0, myImporterPLY.getNumVertices())
+  gl.drawArrays(gl.TRIANGLES, 0, myImporterSTL.getNumVertices())
   requestAnimationFrame(display)
 }
 
