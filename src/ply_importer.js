@@ -15,6 +15,13 @@ export default class ModelImporterPLY {
         //     this.normals[i * 3] + " " + this.normals[i * 3 + 1] + " " + 
         //     this.normals[i * 3 + 2] + " " + this.textureCoords[i * 2] + " " + this.textureCoords[i * 2 + 1])
         // }
+        console.log("PLY")
+        console.log(this.vertVals)
+        console.log(this.stVals)
+        console.log(this.normVals)
+        console.log(this.triangleVerts)
+        console.log(this.textureCoords)
+        console.log(this.normals)
     }
 
     parsePLY() {

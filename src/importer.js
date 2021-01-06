@@ -21,6 +21,14 @@ export default class ModelImporter {
         // console.log(this.triangleVerts)
         // console.log(this.textureCoords)
         // console.log(this.normals)
+
+        console.log("OBJ")
+        console.log(this.vertVals)
+        console.log(this.stVals)
+        console.log(this.normVals)
+        console.log(this.triangleVerts)
+        console.log(this.textureCoords)
+        console.log(this.normals)
     }
 
     parseOBJ() {

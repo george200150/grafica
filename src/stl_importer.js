@@ -13,6 +13,14 @@ export default class ModelImporterSTL {
         this.normals = []
 
         this.parseSTL();
+
+        console.log("STL")
+        console.log(this.vertVals)
+        console.log(this.stVals)
+        console.log(this.normVals)
+        console.log(this.triangleVerts)
+        console.log(this.textureCoords)
+        console.log(this.normals)
     }
 
     parseSTL() {

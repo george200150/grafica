@@ -2,7 +2,7 @@ import raw_object from './model/cube.x3d'
 import * as FBX from 'fbx-parser'
 import * as fs from 'fs'
 
-export default class ModelImporterFBX {
+export default class ModelImporterX3D {
     constructor() {
         // values as read in from OBJ file
         this.vertVals = []
@@ -14,22 +14,46 @@ export default class ModelImporterFBX {
         this.textureCoords = []
         this.normals = []
 
-        this.parseFBX();
+        this.parseX3D();
+
+        console.log("X3D")
+        console.log(this.vertVals)
+        console.log(this.stVals)
+        console.log(this.normVals)
+        console.log(this.triangleVerts)
+        console.log(this.textureCoords)
+        console.log(this.normals)
     }
 
-    parseFBX() {
+    parseX3D() {
         /*let inputFile = raw_object; //fs.readFileSync('./model/Rock_Medium_SPR.fbx', 'utf8')
         let result = FBX.parse(inputFile);
         console.log(result);*/
 
         let parser = new DOMParser();
         let parsedXml = parser.parseFromString(raw_object,"text/xml");
+        console.log("console.log(parsedXml);");
         console.log(parsedXml);
         console.log(parsedXml.getElementsByTagName('Coordinates'));
         console.log(parsedXml.getElementsByTagName('TextureCoordinates'));
 
 
         console.log(parsedXml.getElementsByTagName('Transform'));
+        console.log(parsedXml.getElementsByTagName('Transform').item(0))
+        console.log(parsedXml.getElementsByTagName('Transform').item(0).getElementsByTagName("Transform"))
+        console.log(parsedXml.getElementsByTagName('Transform').item(0).getElementsByTagName("Transform").item(0))
+        console.log(parsedXml.getElementsByTagName('Transform').item(0).getElementsByTagName("Transform").item(0).getElementsByTagName("Group").item(0))
+        console.log(parsedXml.getElementsByTagName('Transform').item(0).getElementsByTagName("Transform").item(0).getElementsByTagName("Group").item(0).getElementsByTagName("Shape").item(0))
+        console.log(parsedXml.getElementsByTagName('Transform').item(0).getElementsByTagName("Transform")
+            .item(0).getElementsByTagName("Group").item(0).getElementsByTagName("Shape").item(0)
+            .getElementsByTagName("IndexedFaceSet").item(0))
+
+        let base = parsedXml.getElementsByTagName('Transform').item(0).getElementsByTagName("Transform")
+            .item(0).getElementsByTagName("Group").item(0).getElementsByTagName("Shape").item(0)
+            .getElementsByTagName("IndexedFaceSet").item(0);
+
+        console.log(base.getElementsByTagName("Coordinate").item(0).getAttribute("point")) // 24
+        console.log(base.getElementsByTagName("TextureCoordinate").item(0).getAttribute("point")) // 72
 
         // const X3DLoader = require('three-x3d-loader');
         // X3DLoader.x3dParser(THREE, parsedXml);

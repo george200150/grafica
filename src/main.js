@@ -2,7 +2,7 @@ import Utils from './utils.js'
 import ModelImporter from './importer.js'
 import ModelImporterPLY from './ply_importer.js'
 import ModelImporterSTL from './stl_importer.js'
-import ModelImporterFBX from './fbx_importer.js'
+import ModelImporterX3D from './x3d_importer.js'
 import Camera from './camera.js'
 import black_white_png from './model/black_white_fill.png'
 import cheese_png from './model/cheese.png' 
@@ -20,7 +20,7 @@ var myCamera
 var myImporter
 var myImporterPLY
 var myImporterSTL
-var myImporterFBX
+var myImporterX3D
 
 var pMat, mvMat, mMat, vMat
 var pMatLoc, mvMatLoc
@@ -31,13 +31,13 @@ var cheese_image
 
 function setupVertices() {
 
-  // myImporter = new ModelImporter()
-  // myImporter.parseOBJ()
+  myImporter = new ModelImporter()
+  //myImporter.parseOBJ()
 
-  //myImporterPLY = new ModelImporterPLY();
+
   myImporterSTL = new ModelImporterSTL();
-  myImporterFBX = new ModelImporterFBX();
-  // myImporterPLY.parsePLY()
+  myImporterX3D = new ModelImporterX3D();
+  myImporterPLY = new ModelImporterPLY();
 
 
   VBO_vertex_position = gl.createBuffer()
