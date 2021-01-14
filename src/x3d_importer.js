@@ -1,6 +1,4 @@
 import raw_object from './model/cube.x3d'
-import * as FBX from 'fbx-parser'
-import * as fs from 'fs'
 
 export default class ModelImporterX3D {
     constructor() {
@@ -34,26 +32,14 @@ export default class ModelImporterX3D {
         let parsedXml = parser.parseFromString(raw_object,"text/xml");
         console.log("console.log(parsedXml);");
         console.log(parsedXml);
-        console.log(parsedXml.getElementsByTagName('Coordinates'));
-        console.log(parsedXml.getElementsByTagName('TextureCoordinates'));
-
-
-        console.log(parsedXml.getElementsByTagName('Transform'));
-        console.log(parsedXml.getElementsByTagName('Transform').item(0))
-        console.log(parsedXml.getElementsByTagName('Transform').item(0).getElementsByTagName("Transform"))
-        console.log(parsedXml.getElementsByTagName('Transform').item(0).getElementsByTagName("Transform").item(0))
-        console.log(parsedXml.getElementsByTagName('Transform').item(0).getElementsByTagName("Transform").item(0).getElementsByTagName("Group").item(0))
-        console.log(parsedXml.getElementsByTagName('Transform').item(0).getElementsByTagName("Transform").item(0).getElementsByTagName("Group").item(0).getElementsByTagName("Shape").item(0))
-        console.log(parsedXml.getElementsByTagName('Transform').item(0).getElementsByTagName("Transform")
-            .item(0).getElementsByTagName("Group").item(0).getElementsByTagName("Shape").item(0)
-            .getElementsByTagName("IndexedFaceSet").item(0))
 
         let base = parsedXml.getElementsByTagName('Transform').item(0).getElementsByTagName("Transform")
             .item(0).getElementsByTagName("Group").item(0).getElementsByTagName("Shape").item(0)
             .getElementsByTagName("IndexedFaceSet").item(0);
 
-        console.log(base.getElementsByTagName("Coordinate").item(0).getAttribute("point")) // 24
-        console.log(base.getElementsByTagName("TextureCoordinate").item(0).getAttribute("point")) // 72
+        this.triangleVerts = base.getElementsByTagName("Coordinate").item(0).getAttribute("point").split(" ") // 24
+        this.textureCoords = base.getElementsByTagName("TextureCoordinate").item(0).getAttribute("point").split(" ") // 72
+
 
         // const X3DLoader = require('three-x3d-loader');
         // X3DLoader.x3dParser(THREE, parsedXml);
@@ -63,8 +49,6 @@ export default class ModelImporterX3D {
         // loader.load('../src/model/cube.fbx', function (object3d) {
         //     console.log(object3d);
         // });
-
-
 
         /*var lines = raw_object.split("\n")
 

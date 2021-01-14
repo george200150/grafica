@@ -9,19 +9,10 @@ export default class ModelImporterPLY {
 
         this.parsePLY()
 
-        // for(var i = 0; i < this.getNumVertices(); i++){
-        //     console.log(this.triangleVerts[i * 3] + " " + 
-        //     this.triangleVerts[i * 3 + 1] + " " + this.triangleVerts[i * 3 + 2] + " " + 
-        //     this.normals[i * 3] + " " + this.normals[i * 3 + 1] + " " + 
-        //     this.normals[i * 3 + 2] + " " + this.textureCoords[i * 2] + " " + this.textureCoords[i * 2 + 1])
-        // }
-        console.log("PLY")
-        console.log(this.vertVals)
-        console.log(this.stVals)
-        console.log(this.normVals)
+        /*console.log("PLY")
         console.log(this.triangleVerts)
         console.log(this.textureCoords)
-        console.log(this.normals)
+        console.log(this.normals)*/
     }
 
     parsePLY() {

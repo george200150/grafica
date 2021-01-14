@@ -21,12 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="afef51ba-4d6c-415b-9779-6e4f8a9ea4d1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fbx_importer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/x3d_importer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/importer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/importer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/cube.x3d" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/cube.x3d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ply_importer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ply_importer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/stl_importer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/stl_importer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/x3d_importer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/x3d_importer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +62,10 @@
       <option name="presentableId" value="Default" />
       <updated>1609677015735</updated>
       <workItem from="1609677017458" duration="2962000" />
-      <workItem from="1609835240377" duration="10104000" />
+      <workItem from="1609835240377" duration="15029000" />
+      <workItem from="1609944525927" duration="488000" />
+      <workItem from="1610183047383" duration="41000" />
+      <workItem from="1610614778999" duration="6488000" />
     </task>
     <servers />
   </component>
@@ -78,11 +82,16 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="722" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1609836706401">
+    <state x="722" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1610624162812">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="722" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1609836706401" />
+    <state x="722" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1610624162812" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1609920619040">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1609920619040" />
   </component>
 </project>

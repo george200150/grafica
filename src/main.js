@@ -1,5 +1,4 @@
 import Utils from './utils.js'
-import ModelImporter from './importer.js'
 import ModelImporterPLY from './ply_importer.js'
 import ModelImporterSTL from './stl_importer.js'
 import ModelImporterX3D from './x3d_importer.js'
@@ -17,7 +16,6 @@ var VBO_vertex_position, VBO_texture_coordinates
 var vertex_position_Loc, texture_coordinates_Loc
 
 var myCamera
-var myImporter
 var myImporterPLY
 var myImporterSTL
 var myImporterX3D
@@ -31,9 +29,6 @@ var cheese_image
 
 function setupVertices() {
 
-  myImporter = new ModelImporter()
-  //myImporter.parseOBJ()
-
 
   myImporterSTL = new ModelImporterSTL();
   myImporterX3D = new ModelImporterX3D();
@@ -43,12 +38,14 @@ function setupVertices() {
   VBO_vertex_position = gl.createBuffer()
   gl.bindBuffer(gl.ARRAY_BUFFER, VBO_vertex_position)
   //gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(myImporterPLY.triangleVerts), gl.STATIC_DRAW)
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(myImporterSTL.triangleVerts), gl.STATIC_DRAW)
+  //gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(myImporterSTL.triangleVerts), gl.STATIC_DRAW)
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(myImporterX3D.triangleVerts), gl.STATIC_DRAW)
 
   VBO_texture_coordinates = gl.createBuffer()
   gl.bindBuffer(gl.ARRAY_BUFFER, VBO_texture_coordinates)
   //gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(myImporterPLY.textureCoords), gl.STATIC_DRAW)
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(myImporterSTL.textureCoords), gl.STATIC_DRAW)
+  //gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(myImporterSTL.textureCoords), gl.STATIC_DRAW)
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(myImporterX3D.textureCoords), gl.STATIC_DRAW)
 
 }
 
@@ -123,7 +120,9 @@ function display(currentTime) {
   gl.generateMipmap(gl.TEXTURE_2D)
 
   //gl.drawArrays(gl.TRIANGLES, 0, myImporterPLY.getNumVertices())
-  gl.drawArrays(gl.TRIANGLES, 0, myImporterSTL.getNumVertices())
+  //gl.drawArrays(gl.TRIANGLES, 0, myImporterSTL.getNumVertices())
+  gl.drawArrays(gl.TRIANGLES, 0, myImporterX3D.getNumVertices())
+
   requestAnimationFrame(display)
 }
 
